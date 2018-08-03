@@ -106,7 +106,9 @@ def __parse_midi(data_fn):
     #           Actually on second thought: melody/comp start on Ab, and resolve to
     #           the same key (Ab) so could actually just cut out last measure to loop.
     #           Decided: just cut out the last measure. 
-    del chords[len(chords) - 1]
+    #del chords[len(chords) - 1]
+    print(len(chords))
+    print(len(measures))
     assert len(chords) == len(measures)
 
     return measures, chords
