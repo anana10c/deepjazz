@@ -180,8 +180,8 @@ def main(args):
         N_epochs = 128 # default
 
     # i/o settings
-    data_fn = 'midi/' + 'TetrisA.mid' 
-    out_fn = 'midi/' 'TetrisA...' + str(N_epochs)
+    data_fn = 'midi/' + 'original_metheny.mid' # 'And Then I Knew' by Pat Metheny 
+    out_fn = 'midi/' 'deepjazz_on_metheny...' + str(N_epochs)
     if (N_epochs == 1): out_fn += '_epoch.midi'
     else:               out_fn += '_epochs.midi'
 
