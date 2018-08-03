@@ -21,6 +21,7 @@ def __parse_midi(data_fn):
     # Parse the MIDI data for separate melody and accompaniment parts.
     midi_data = converter.parse(data_fn)
     # Get melody part, compress into single voice.
+    print(len(midi_data))
     melody_stream = midi_data[0]     # For Metheny piece, Melody is Part #5.
     melodies = melody_stream.getElementsByClass(stream.Voice)
     print(type(melodies))
@@ -37,7 +38,7 @@ def __parse_midi(data_fn):
 
     # Change key signature to adhere to comp_stream (1 sharp, mode = major).
     # Also add Electric Guitar. 
-    melody_voice.insert(0, instrument.ElectricGuitar())
+    #melody_voice.insert(0, instrument.ElectricGuitar())
     melody_voice.insert(0, key.KeySignature(sharps=1)) #took out mode='major' in KeySignature
 
     # The accompaniment parts. Take only the best subset of parts from
